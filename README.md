@@ -37,7 +37,7 @@
 
     git地址 https://github.com/vsionly/ootb/tree/master/color7log
 
-### 1、abstract
+### 1、abstract (English documents stop updating)
     Make some settings only for the output text color of console.log
 ### 2、instuctment
     npm install color7log
