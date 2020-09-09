@@ -12,7 +12,10 @@ const {red, redF, green, greenF, greenFmt, yellow, blue, purple, cyan, white, gr
 let s1 = '1111111111111'
 let s2 = '22222222222222'
 // custom({red: s1, green: s2})
-autoC(111111, 2222222, 3333,54444,5555, 333, 000,221111, 88)
+function aa (){
+    console.log(2222)
+}
+autoC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
 // greenF('this text is green', 11, 'params')
 // greenFmt('this text is green', 11, 'params')
 // greenF({
