@@ -1,0 +1,22 @@
+{
+  "name": "color7log",
+  "version": "1.4.2",
+  "description": "a simple log only with color",
+  "main": "theme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node demo.js"
+  },
+  "keywords": [
+    "console.log",
+    "color",
+    "log",
+    "nodeplugin",
+    "node plugin",
+    "console plugin",
+    "console",
+    "node"
+  ],
+  "author": "vsionly",
+  "license": "ISC"
+}
