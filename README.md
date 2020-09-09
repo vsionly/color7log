@@ -20,16 +20,19 @@
     const theme = require('color7log') // theme.custom({cyan:'浅蓝色', red:'组合红', green:'组合绿'})
     custom({cyan:'组合浅蓝色', red:'组合红', green:'组合绿'}) 支持多个组合输出
 
-    #### 2）新增可以定义格式化字符 每个颜色方法后加Fmt 例如
-    const {redFmt} = require('color7log')
-    redFmt('输出灰色文本', '-')  将以多个‘-’符号作为分割线输出内容
-
-    #### 3）新增默认格式化字符'-' 每个颜色方法后加F 例如
+    #### 2）新增默认格式化字符'-' 每个颜色方法后加F 例如
     const {redF} = require('color7log')
     redF('输出灰色文本')  将以多个‘-’符号作为分割线输出内容
 
+    #### 3）新增可以自定义格式化字符 每个颜色方法后加Fmt 例如
+    const {redFmt} = require('color7log')
+    redFmt('输出灰色文本', '-')  将以多个‘-’符号作为分割线输出内容
+
     #### 4）优化格式化字符的样式
     redFmt('参数1', '参数2', '-')  将以多个‘-’符号作为分割线分别输出内容，看上去更容易区别
+
+    #### 5）自动选择颜色函数 依次从'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white', 'gray'选取颜色
+    autoC(1, 2, 3) 会依次输出 红色，绿色，黄色
 
     如果命令窗或者bash工具窗（如git bash）中输出文字乱码，
     请在对应工具的选项的子菜单中 修改text设置为cn utf8
@@ -37,7 +40,8 @@
 
     git地址 https://github.com/vsionly/ootb/tree/master/color7log
 
-### 1、abstract (English documents stop updating)
+## The English instructions have stopped being updated
+### 1、abstract
     Make some settings only for the output text color of console.log
 ### 2、instuctment
     npm install color7log
