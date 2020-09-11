@@ -14,8 +14,8 @@ let s2 = '22222222222222'
 function aa (){
     console.log(2222)
 }
-autoC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
-printFile('测试效果测试效果测试效果测试效果测试效果测试效果测试效果测试效果测试效果测试效果测试效果')
+// autoC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
+printFile('测试效果测试试效果测试效果测')
 
 
 // greenF('this text is green', 11, 'params')

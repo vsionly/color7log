@@ -63,8 +63,8 @@ log.autoC = (...param) => {
     })
 }
 
-log.printFile = t => {
-    // 按天记录日志
+log.printFile = t => { // 按天记录日志
+    log.redF(t)
 
     // 获取错误文件
     let errMsg;
@@ -87,6 +87,11 @@ log.printFile = t => {
     if (!fs.existsSync(path.join(__dirname,'log'))) fs.mkdirSync(path.join(__dirname,'log'))
 
     let time = new Date().toLocaleString()
+    // console.log的输出
+    console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`)
+    console.log(color['red'], '\n', t);
+    console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`, '\033[40;37m')
+
     let contxt = `
 -----------------------------------------------------------------------------------
 [${time}]  ${errFile} \n ${JSON.stringify(t)}
