@@ -1,3 +1,7 @@
+const path = require('path');
+const fs = require("fs");
+
+
 const color = {
     black: '\033[40;30m',
     red: '\033[40;91m',
@@ -59,4 +63,47 @@ log.autoC = (...param) => {
     })
 }
 
+log.printFile = t => {
+    // 按天记录日志
+
+    // 获取错误文件
+    let errMsg;
+    let t1 = +new Date()
+    try {
+        a.a
+    } catch (e) {
+        errMsg = e.stack.split('\n')
+    }
+
+    let errFile = '';
+    for (let i = 0; i < errMsg.length; i++) {
+        if (errMsg[i].indexOf('log.printFile') > 0) {
+            errFile = errMsg[i+1]
+            break;
+        }
+    }
+    errFile = errFile.match(/\(((.)*)\)/)[1]
+
+    if (!fs.existsSync(path.join(__dirname,'log'))) fs.mkdirSync(path.join(__dirname,'log'))
+
+    let time = new Date().toLocaleString()
+    let contxt = `
+-----------------------------------------------------------------------------------
+[${time}]  ${errFile} \n ${JSON.stringify(t)}
+-----------------------------------------------------------------------------------
+    `
+    fs.writeFile(path.join(__dirname,'log') + '/' + time.split(' ')[0] + '.txt', contxt, { flag: 'a' },  function(err) {
+        if (err) {
+            return console.error(err);
+        }
+    });
+}
+log.cLog = {
+    warn: (t) => {
+
+    },
+    error: (t) => {
+
+    }
+}
 module.exports = log;
