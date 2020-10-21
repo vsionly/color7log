@@ -1,5 +1,5 @@
 ### 1、简介
-    设置node中console.log的输出文字颜色
+    设置node中console.log的输出文字颜色, 输出日志文件
 ### 2、使用说明
     npm install color7log
     const {green} = require('color7log')
@@ -32,9 +32,11 @@
     redFmt('参数1', '参数2', '-')  将以多个‘-’符号作为分割线分别输出内容，看上去更容易区别
 
     #### 5）自动选择颜色函数 依次从'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white', 'gray'选取颜色
+    const {autoC} = require('color7log')
     autoC(1, 2, 3) 会依次输出 红色，绿色，黄色
 
     #### 6）日志文件方法 默认在根目录下的log目录中按日期记录文件
+    const {printFile} = require('color7log')
     printFile('测试效果') 会在/log/2020-9-11.txt中记录内容
     （个人感觉一般的系统没必要像log4js那样记录复杂的日志，认知有限，还在成长）
 
