@@ -64,8 +64,6 @@ log.autoC = (...param) => {
 }
 
 log.printFile = t => { // 按天记录日志
-    log.redF(t)
-
     // 获取错误文件
     let errMsg;
     let t1 = +new Date()
@@ -84,9 +82,9 @@ log.printFile = t => { // 按天记录日志
     }
     errFile = errFile.match(/\(((.)*)\)/)[1]
 
-    if (!fs.existsSync(path.join(__dirname,'log'))) fs.mkdirSync(path.join(__dirname,'log'))
+    if (!fs.existsSync(path.join(path.resolve("."),'log'))) fs.mkdirSync(path.join(path.resolve("."),'log'))
 
-    let time = new Date().toLocaleString()
+    let time = new Date()
     // console.log的输出
     console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`)
     console.log(color['red'], '\n', t);
@@ -96,7 +94,7 @@ log.printFile = t => { // 按天记录日志
 [${time}]  ${errFile} \n ${JSON.stringify(t)}
 -----------------------------------------------------------------------------------
     `
-    fs.writeFile(path.join(__dirname,'log') + '/' + time.split(' ')[0] + '.txt', contxt, { flag: 'a' },  function(err) {
+    fs.writeFile(path.join(path.resolve("."),'log') + '/' + (time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()) + '.txt', contxt, { flag: 'a' },  function(err) {
         if (err) {
             return console.error(err);
         }
