@@ -1,5 +1,5 @@
 ### 1、简介
-    设置node中console.log的输出文字颜色, 输出日志文件
+    设置node中console.log的输出文字颜色, 输出日志文件 7的意思是&键盘符
 ### 2、使用说明
     npm install color7log
     const {green} = require('color7log')
@@ -46,7 +46,6 @@
 
     git地址 https://github.com/vsionly/ootb/tree/master/color7log
 
-## The English instructions have stopped being updated
 ### 1、abstract
     Make some settings only for the output text color of console.log
 ### 2、instuctment
@@ -57,19 +56,28 @@
     red('red 1', 'red 2', 'red 1')
 
     #### 1) Add multi-color settings
-    const {custom} = require('color7log')
-    const theme = require('color7log') // theme.custom({cyan:'this text'color is cyan', red:'this text'color is red', green:'this text'color is green'})
+        const {custom} = require('color7log')
+        const theme = require('color7log') // theme.custom({cyan:'this text'color is cyan', red:'this text'color is red', green:'this text'color is green'})
 
     #### 2) New You can define formatting characters. Add Fmt after each color method. for example
-    Const {redFmt} = require('color7log')
-    redFmt ('output gray text', '-') will output content with multiple '-' symbols as split lines
+        Const {redFmt} = require('color7log')
+        redFmt ('output gray text', '-') will output content with multiple '-' symbols as split lines
 
     #### 3) Add the default formatting character '-' to each method followed by F
-    Const {redF} = require('color7log')    
-    redF ('output gray text') will output content with multiple ‘-’ symbols as split lines
+        Const {redF} = require('color7log')    
+        redF ('output gray text') will output content with multiple ‘-’ symbols as split lines
 
     #### 4) Optimize the style of formatting characters
-    redFmt('parameter 1', 'parameter 2', '-') will output parameter 1 and parameter 2 with multiple ‘-’ symbols as split lines, which seems to be easier to distinguish
+        redFmt('parameter 1', 'parameter 2', '-') will output parameter 1 and parameter 2 with multiple ‘-’ symbols as split lines, which seems to be easier to distinguish
+
+    #### 5) Automatically select color function Select colors from'red','green','yellow','blue','purple','cyan','white', and'gray' in sequence
+        const {autoC} = require('color7log')
+        autoC(1, 2, 3) will output red, green and yellow in turn
+
+    #### 6) Log file method By default, log files are recorded by date in the log directory under the root directory
+        const {printFile} = require('color7log')
+        printFile('test effect') will record the content in /log/2020-9-11.txt
+        (Personally, I feel that the general system does not need to record complex logs like log4js, the knowledge is limited and itis still growing)
 
     If the input text is garbled in the command window or git bash,
     modify the encoding of the command tool to your own standard encoding.
