@@ -83,4 +83,4 @@
     modify the encoding of the command tool to your own standard encoding.
     If you have any questions, please send a message to liwsh666@126.com
 
-    git https://github.com/vsionly/ootb/tree/master/color7log
+    git@github.com:vsionly/color7log.git
