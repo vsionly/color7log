@@ -44,7 +44,7 @@
     请在对应工具的选项的子菜单中 修改text设置为cn utf8
     有问题欢迎反馈 liwsh666@126.com
 
-    git地址 https://github.com/vsionly/ootb/tree/master/color7log
+    git地址 [https://github.com/vsionly/color7log](https://github.com/vsionly/color7log)
 
 ### 1、abstract
     Make some settings only for the output text color of console.log
@@ -83,4 +83,4 @@
     modify the encoding of the command tool to your own standard encoding.
     If you have any questions, please send a message to liwsh666@126.com
 
-    git@github.com:vsionly/color7log.git
+    git [https://github.com/vsionly/color7log](https://github.com/vsionly/color7log)
