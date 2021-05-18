@@ -1,11 +1,15 @@
 {
   "name": "color7log",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "description": "a simple log only with color",
   "main": "theme.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vsionly/color7log.git"
   },
   "keywords": [
     "console.log",

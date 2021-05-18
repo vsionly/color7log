@@ -8,11 +8,11 @@ const {red, redF, green, greenF, greenFmt, printFile, blue, purple, cyan, white,
 // cyan('输出蓝绿色文本')
 // white('输出白色文本')
 // gray('输出灰色文本')
-let s1 = '1111111111111'
-let s2 = '22222222222222'
+let s1 = '22'
+let s2 = '34'
 // custom({red: s1, green: s2})
 function aa (){
-    console.log(2222)
+    console.log(11)
 }
 // autoC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
 printFile('测试效果测试试效果测试效果测')
