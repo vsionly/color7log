@@ -1,6 +1,6 @@
 {
   "name": "color7log",
-  "version": "1.6.2",
+  "version": "1.6.7",
   "description": "a simple log only with color",
   "main": "index.js",
   "scripts": {

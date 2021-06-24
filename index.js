@@ -29,7 +29,7 @@ for (let k of keys) {
         logFun(txt, k, '-')
     }
 
-    // 设置带颜色和自定义分隔符(默认‘-’)的输出
+    // 设置带颜色和自定义分隔符的输出
     log[k+'Fmt'] = (...txt) => {
         let sign = txt.pop()
         logFun(txt, k, sign)
@@ -43,9 +43,9 @@ const logFun = (txt, k, icon) => {
     })
 }
 function formatT(t, k, i, s){
-    if (s) console.log(color[k], '\n' + arr.join(s) + ' 第' + (i + 1) + '个参数开始 ' + arr.join(s))
+    if (s) console.log(color[k], '\n' + arr.join(s) + ' the ' + (i + 1) + 'th start' + arr.join(s))
     console.log(color[k], '\n', t, (s?'':'\033[40;37m'));
-    if (s) console.log(color[k], '\n' + arr.join(s) + ' 第' + (i + 1) + '个参数结束 ' + arr.join(s), '\033[40;37m')
+    if (s) console.log(color[k], '\n' + arr.join(s) + ' the ' + (i + 1) + 'th end' + arr.join(s), '\033[40;37m')
 }
 // 支持多个组合输出 custom({cyan:'组合浅蓝色', red:'组合红', green:'组合绿'})
 log.custom = (param) => {
@@ -58,8 +58,7 @@ log.custom = (param) => {
 log.autoC = (...param) => {
     let colors = ['red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white', 'gray']
     param.map((v, k) => {
-        formatT(v, colors.shift(), k, '-')
-        if (!colors.length) colors = ['red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white', 'gray']
+        formatT(v, colors[k%8], k, '-')
     })
 }
 

@@ -1,4 +1,5 @@
-const {red, redF, green, greenF, greenFmt, printFile, blue, purple, cyan, white, gray, custom, autoC} = require('./theme.js');
+const {red, redF, green, greenF, greenFmt, printFile, blue, purple, cyan, white, gray, custom, autoC,
+    greenC} = require('./index.js');
 // red('输出黑色文本', '测试参数')
 // red('输出红色文本', 8, 11)
 // green('输出绿色文本')
@@ -8,18 +9,24 @@ const {red, redF, green, greenF, greenFmt, printFile, blue, purple, cyan, white,
 // cyan('输出蓝绿色文本')
 // white('输出白色文本')
 // gray('输出灰色文本')
-let s1 = '22'
+let s1 = 'this is red '
 let s2 = '34'
-// custom({red: s1, green: s2})
+green(1, 2, 3, 4,  )
+
+custom({cyan:'浅蓝色',red:'组合红', green:'组合绿'})
+    greenF('参数1', '参数2', '参数3') // 将以多个'-'符号作为分割线输出内容
+
+    greenFmt('参数1', '参数2', '参数3', '=')
+    autoC('参数1', '参数2', '参数3')
+
 function aa (){
     console.log(11)
 }
 // autoC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
 printFile('测试效果测试试效果测试效果测')
 
-
+// greenC([2, 3, 4,11], aa, {a: 22, fil: { a: 2235}},54444)
 // greenF('this text is green', 11, 'params')
-// greenFmt('this text is green', 11, 'params')
 // greenF({
 //     f: 1,
 //     fa:71

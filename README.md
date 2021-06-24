@@ -18,35 +18,43 @@
     cyan('输出蓝绿色文本')
     white('输出白色文本')
     gray('输出灰色文本')
+
+    theme.red('这个是红色的')
+    ...
+
 ```
-    #### 1）新增 可以定义输出多个颜色
+    #### 1）定义输出多个颜色
 ```javascript
     const {custom} = require('color7log')
-
-    const theme = require('color7log')
-    theme.custom({cyan:'浅蓝色',red:'组合红', green:'组合绿'}) // 支持多个组合输出
+    custom({cyan:'浅蓝色',red:'组合红', green:'组合绿'}) // 支持多个组合输出
 ```
 
-    #### 2）新增默认格式化字符'-' 每个颜色方法后加F 例如
-    const {redF} = require('color7log')
-    redF('输出灰色文本')  将以多个‘-’符号作为分割线输出内容
+    #### 2）默认以字符'-'分隔每个参数 每个颜色方法后加F 例如
+```javascript
+    const {greenF} = require('color7log')
+    greenF('参数1', '参数2', '参数3') // 将以多个'-'符号作为分割线输出内容
+```
 
-    #### 3）新增可以自定义格式化字符 每个颜色方法后加Fmt 例如
-    const {redFmt} = require('color7log')
-    redFmt('输出灰色文本', '-')  将以多个‘-’符号作为分割线输出内容
+    #### 3）自定义格式化字符 每个颜色方法后加Fmt 最后一个参数必须是格式化字符
+```javascript
+    const {greenFmt} = require('color7log')
 
-    #### 4）优化格式化字符的样式
-    redFmt('参数1', '参数2', '-')  将以多个‘-’符号作为分割线分别输出内容，看上去更容易区别
+    // 将以多个'='符号作为分割线分别输出内容
+    greenFmt('参数1', '参数2', '参数3', '=')
+```
 
-    #### 5）自动选择颜色函数 依次从'red', 'green', 'yellow', 'blue', 'purple', 'cyan',
-    'white', 'gray'选取颜色
-
+    #### 4）自动选择颜色函数 依次从'red', 'green', 'yellow', 'blue', 'purple'
+    , 'cyan','white', 'gray'选取颜色, 分隔符'-'
+```javascript
     const {autoC} = require('color7log')
-    autoC(1, 2, 3) 会依次输出 红色，绿色，黄色
+    autoC('参数1', '参数2', '参数3') // 会依次输出 红色，绿色，黄色
+```
 
-    #### 6）日志文件方法 默认在根目录下的log目录中按日期记录文件
+    #### 5）日志文件方法 默认在根目录下的log目录中按日期记录文件
+```javascript
     const {printFile} = require('color7log')
-    printFile('测试效果') 会在/log/2020-9-11.txt中记录内容
+    printFile('测试效果') // 会在/log/2020-9-11.txt中记录内容
+```
     （个人感觉一般的系统没必要像log4js那样记录复杂的日志，认知有限，还在成长）
 
     如果命令窗或者bash工具窗（如git bash）中输出文字乱码，
@@ -61,44 +69,48 @@
     npm install color7log
 ```javascript
     const {green} = require('color7log') // use one fun
-    const {black, red, green, yellow, blue, purple, cyan, white, gray} = require('color7log')
+    const {black, red, green, yellow, blue, purple, cyan, white,
+           gray} = require('color7log')
      // Support multiple parameters
 
     const theme = require('color7log') // theme.green('this text is green')
     red('red 1', 'red 2', 'red 1')
 ```
-    #### 1) Add multi-color settings
+#### 1) Add multi-color settings
 ```javascript
-        const {custom} = require('color7log')
-        const theme = require('color7log')
-        theme.custom({cyan:'this text color is cyan', red:'this text color is red' ,
-            green:'this text color is green'})
+    const {custom} = require('color7log')
+    custom({cyan:'this text color is cyan', red:'this text color is red' ,
+        green:'this text color is green'})
 ```
 
-    #### 2) New You can define formatting characters. Add Fmt after each color method. for example
-        Const {redFmt} = require('color7log')
-        redFmt ('output gray text', '-') will output content with multiple '-' symbols as split lines
+#### 2) Add the default formatting character '-' to each method followed by F
+```javascript
+    Const {redF} = require('color7log')    
+    redF ('output gray text') // will output content with multiple '-' symbols
+    // as split lines
+```
 
-    #### 3) Add the default formatting character '-' to each method followed by F
-        Const {redF} = require('color7log')    
-        redF ('output gray text') will output content with multiple ‘-’ symbols as split lines
+#### 3) New You can define formatting characters. Add Fmt after each color method.
+```javascript
+    Const {redFmt} = require('color7log')
+    redFmt ('output gray text', '=') // will output content with multiple '=' symbols as split lines
+```
 
-    #### 4) Optimize the style of formatting characters
-        redFmt('parameter 1', 'parameter 2', '-') will output parameter 1 and parameter 2
-        with multiple ‘-’ symbols as split lines, which seems to be easier to distinguish
+#### 4) Automatically select color function Select colors from'red','green','yellow','blue',
+'purple','cyan','white', and'gray' in sequence
+```javascript
+    const {autoC} = require('color7log')
+    autoC(1, 2, 3) // will output red, green and yellow in turn
+```
 
-    #### 5) Automatically select color function Select colors from'red','green','yellow','blue',
-    'purple','cyan','white', and'gray' in sequence
-        const {autoC} = require('color7log')
-        autoC(1, 2, 3) will output red, green and yellow in turn
+#### 5) the log file method logs files by date in the log directory under the root directory
+```javascript
+    const {printFile} = require('color7log')
+    printFile('test effect') // will record the content in /log/2020-9-11.txt
+```
 
-    #### 6) Log file method By default, log files are recorded by date in the log directory
-         under the root directory
-        const {printFile} = require('color7log')
-        printFile('test effect') will record the content in /log/2020-9-11.txt
-
-        (Personally, I feel that the general system does not need to record complex logs
-        like log4js, the knowledge is limited and itis still growing)
+    (Personally, I feel that the general system does not need to record complex logs
+    like log4js, the knowledge is limited and itis still growing)
 
     If the input text is garbled in the command window or git bash,
     modify the encoding of the command tool to your own standard encoding.
