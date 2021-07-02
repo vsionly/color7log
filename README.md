@@ -23,17 +23,21 @@
     ...
 
 ```
+![Image text](http://www.vsionly.com:3000/img/1.png)
+
     #### 1）定义输出多个颜色
 ```javascript
     const {custom} = require('color7log')
     custom({cyan:'浅蓝色',red:'组合红', green:'组合绿'}) // 支持多个组合输出
 ```
+![Image text](http://www.vsionly.com:3000/img/2.png)
 
     #### 2）默认以字符'-'分隔每个参数 每个颜色方法后加F 例如
 ```javascript
     const {greenF} = require('color7log')
     greenF('参数1', '参数2', '参数3') // 将以多个'-'符号作为分割线输出内容
 ```
+![Image text](http://www.vsionly.com:3000/img/3.png)
 
     #### 3）自定义格式化字符 每个颜色方法后加Fmt 最后一个参数必须是格式化字符
 ```javascript
@@ -42,6 +46,7 @@
     // 将以多个'='符号作为分割线分别输出内容
     greenFmt('参数1', '参数2', '参数3', '=')
 ```
+![Image text](http://www.vsionly.com:3000/img/4.png)
 
     #### 4）自动选择颜色函数 依次从'red', 'green', 'yellow', 'blue', 'purple'
     , 'cyan','white', 'gray'选取颜色, 分隔符'-'
@@ -49,6 +54,7 @@
     const {autoC} = require('color7log')
     autoC('参数1', '参数2', '参数3') // 会依次输出 红色，绿色，黄色
 ```
+![Image text](http://www.vsionly.com:3000/img/5.png)
 
     #### 5）日志文件方法 默认在根目录下的log目录中按日期记录文件
 ```javascript
@@ -93,7 +99,9 @@
 #### 3) New You can define formatting characters. Add Fmt after each color method.
 ```javascript
     Const {redFmt} = require('color7log')
-    redFmt ('output gray text', '=') // will output content with multiple '=' symbols as split lines
+
+    // will output content with multiple '=' symbols as split lines
+    redFmt ('output gray text', '=')
 ```
 
 #### 4) Automatically select color function Select colors from'red','green','yellow','blue',
@@ -109,8 +117,8 @@
     printFile('test effect') // will record the content in /log/2020-9-11.txt
 ```
 
-    (Personally, I feel that the general system does not need to record complex logs
-    like log4js, the knowledge is limited and itis still growing)
+    (Personally, I feel that the general system does not need to record
+    complex logs like log4js, the knowledge is limited and itis still growing)
 
     If the input text is garbled in the command window or git bash,
     modify the encoding of the command tool to your own standard encoding.

@@ -43,9 +43,9 @@ const logFun = (txt, k, icon) => {
     })
 }
 function formatT(t, k, i, s){
-    if (s) console.log(color[k], '\n' + arr.join(s) + ' the ' + (i + 1) + 'th start' + arr.join(s))
-    console.log(color[k], '\n', t, (s?'':'\033[40;37m'));
-    if (s) console.log(color[k], '\n' + arr.join(s) + ' the ' + (i + 1) + 'th end' + arr.join(s), '\033[40;37m')
+    if (s) console.log(`\n${color[k]}${arr.join(s)} the ${i + 1}th start ${arr.join(s)}`)
+    console.log(`\n ${color[k]}${t}`);
+    if (s) console.log(`\n${color[k]}${arr.join(s)} the ${i + 1}th end ${arr.join(s)}`)
 }
 // 支持多个组合输出 custom({cyan:'组合浅蓝色', red:'组合红', green:'组合绿'})
 log.custom = (param) => {
@@ -87,7 +87,7 @@ log.printFile = t => { // 按天记录日志
     // console.log的输出
     console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`)
     console.log(color['red'], '\n', t);
-    console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`, '\033[40;37m')
+    console.log(color['red'], `\n-------- ${time} -- ${errFile} --------`)
 
     let contxt = `
 [${time}]  ${errFile} \n ${JSON.stringify(t)}

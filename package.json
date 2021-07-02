@@ -1,6 +1,6 @@
 {
   "name": "color7log",
-  "version": "1.6.7",
+  "version": "1.6.11",
   "description": "a simple log only with color",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,12 @@
     "url": "git@github.com:vsionly/color7log.git"
   },
   "keywords": [
+    "node log",
+    "nodelog",
     "console.log",
+    "colorlog",
+    "color log",
     "color",
-    "log",
     "log file",
     "nodeplugin",
     "node plugin",
